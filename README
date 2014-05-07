@@ -1,3 +1,15 @@
+@@项目名称@@
+===========
+@@项目用途及介绍，请在这里描述@@
+
+
+
+regae
+=====
+cmoon 应用初始框架 (mvc framework)，使用cmoon开发web应用，请从这里开始。
+
+
+
 目录结构
 =======
 regae/
@@ -10,26 +22,25 @@ regae/
 |
 ├── walk            数据库相关处理逻辑（model）
 ├── run             动态页面处理器。其下只有一个程序 viki，用来处理所有动态页面请求
-├── fly             vitrual host 根目录，一般存放静态文件(js, css, image, sitemap...)
+├── fly             vitrual host 根目录，一般存放静态文件
+|                    (js, css, image, sitemap...)
 |
 ├── mtl             运维脚本及工具
 ├── tpl             模版文件存放目录（一般被run和pager使用）
 ├── pub             站点内部使用公共C函数
 ├── pager           静态页面生成工具，类似CMS功能
 |
-`── xport           分布式带逻辑内存缓存和消息队列
+`── xport           分布式带逻辑处理内存缓存、和消息队列
 
 
 
 
 
-初始化步骤
-========
+如何开始？
+=======
     1, git clone --recursive git://github.com/bigml/regae.git PROJNAME
     2, cd PROJNAME; sed -i 's/voov/PROJNAME/g' `grep -rl voov .`
     3, find -name '*voov*'; rename them
     4, mkdir -p /var/log/moon/PROJNAME/; chmod 777 /var/log/moon/PROJNAME/
 
-
-
-请参考 doc/system-*.txt 详细了解 regae 工作原理及开发步骤。
+    5, 请参考 doc/system-*.txt 进一步了解 regae 工作原理及开发步骤。
