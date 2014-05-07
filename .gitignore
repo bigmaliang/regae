@@ -1,0 +1,7 @@
+*.[oa]
+*~
+*.so
+*.dSYM/
+.DS_Store
+cscope.files
+cscope.out
