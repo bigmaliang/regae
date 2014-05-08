@@ -78,14 +78,16 @@ void lerr_opfinish_json(NEOERR *err, HDF *hdf)
 {
     if (err == STATUS_OK) {
         hdf_set_value(hdf, PRE_SUCCESS, "1");
+        mcs_set_int_attr(hdf, PRE_SUCCESS, "type", CNODE_TYPE_INT);
         return;
     }
-    
+
     hdf_remove_tree(hdf, PRE_SUCCESS);
-    
+
     NEOERR *neede = mcs_err_valid(err);
     /* set PRE_ERRXXX with the most recently err */
     hdf_set_int_value(hdf, PRE_ERRCODE, neede->error);
+    mcs_set_int_attr(hdf, PRE_ERRCODE, "type", CNODE_TYPE_INT);
     if (!hdf_get_obj(hdf, PRE_ERRMSG)) {
         hdf_set_valuef(hdf, "%s=%s:%d %s",
                        PRE_ERRMSG, neede->file, neede->lineno, neede->desc);
