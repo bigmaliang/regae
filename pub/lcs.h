@@ -9,10 +9,10 @@ __BEGIN_DECLS
  */
 #define HDF_GET_OBJ(hdf, key, ret)                              \
     do {                                                        \
-        if (!hdf_get_obj(hdf, key)) {                           \
+        ret = hdf_get_obj(hdf, key);                            \
+        if (!ret) {                                             \
             return nerr_raise(LERR_USERINPUT, "need %s", key);  \
         }                                                       \
-        ret = hdf_get_obj(hdf, key);                            \
     } while (0)
 
 #define HDF_GET_INT(hdf, key, ret)                              \
